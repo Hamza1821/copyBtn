@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+
+        .main{
+            
+            text-align: center;
+            }
+            .text{
+                height: 100px;
+                width: 100px;
+                border: 2px solid black;
+                background-color: rgb(236, 53, 166);
+            }
+            textarea{
+                background-color: rgb(236, 53, 166);
+            }
+            .btn{
+                height: 50px;
+                width: 70px;
+                background-color: blue;
+               border: 2px solid black;
+                border-radius: 10px;
+            }
+            @keyframes colorChange {
+                0%{
+                    background-color: green;
+                }
+                80%{
+                    background-color: blue;
+                }
+            }
+            .btn:active{
+                transform: scale(0.7);
+                
+                animation:colorChange 5s ease-in-out none
+            }
+
+    </style>
+    <title>copyBtn</title>
+</head>
+<body>
+    <div class="main">
+        <br><br><br><br><br>
+        <textarea type="text" class="text" id="myText" placeholder="Enter Text"></textarea> <br><br><br><br><br>
+        <button class="btn"  id="btn" onclick="copyContent()">Copy</button>
+        <br><br><br><br><br>
+        <textarea name="" id="" cols="10" rows="5"></textarea>
+    </div>
+    <script>
+        
+        
+        function copyContent(e){
+            
+        const copy= document.getElementById('btn');
+        let text=document.getElementById('myText').value
+            navigator.clipboard.writeText(text);
+            navigator.clipboard.writeText(text);
+           
+            
+                copy.style.transition="all .3s ease-in";
+                
+                
+
+        }
+       
+    </script>
+</body>
+</html>
